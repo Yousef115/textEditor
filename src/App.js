@@ -24,8 +24,24 @@ class App extends Component {
       underlined = this.state.underlined;
 
     let stylingBoxes = styleNames.map(style => {
+      let btncolor;
+      switch (style) {
+        case "bold":
+          btncolor = bold ? "true" : "false";
+          break;
+        case "italic":
+          btncolor = italics ? "true" : "false";
+          break;
+        case "underline":
+          btncolor = underlined ? "true" : "false";
+          break;
+        default:
+          break;
+      }
       return (
         <button
+          className={btncolor}
+          id={style}
           style={styles[style]}
           key={style}
           onClick={() => {
@@ -57,9 +73,9 @@ class App extends Component {
       );
     });
 
-    let fontWeight = bold ? "bold" : "",
-      fontStyle = italics ? "italic" : "",
-      textDecoration = underlined ? "underline" : "",
+    let isBold = bold ? "bold" : "",
+      isItalic = italics ? "italic" : "",
+      isUnderlined = underlined ? "underline" : "",
       color = this.state.color;
 
     return (
@@ -68,9 +84,9 @@ class App extends Component {
         <textarea
           style={{
             color: color,
-            fontWeight: fontWeight,
-            fontStyle: fontStyle,
-            textDecoration: textDecoration
+            fontWeight: isBold,
+            fontStyle: isItalic,
+            textDecoration: isUnderlined
           }}
         />
         <div className="my-3">{colorBoxes}</div>

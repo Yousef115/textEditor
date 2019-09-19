@@ -1,5 +1,18 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.true {
+    color: white;
+    background-color: rgb(75, 56, 247);
+    border-radius: 25%;
+    margin: 4px 2px;
+}
+
+.false {
+    background-color: lightgray;
+    border-radius: 25%;
+    margin: 4px 2px;
 }
